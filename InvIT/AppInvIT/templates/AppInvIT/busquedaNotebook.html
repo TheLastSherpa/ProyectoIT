@@ -1,0 +1,16 @@
+<!-- Template Busqueda Notebook-->
+{% extends "AppInvIT/base.html" %}
+{% load static %}
+
+{% block contenido %}
+    <!-- Contenido Dinamico-->
+    <div class="container-fluid">
+        <h1 class="mt-4">Buscar Notebook</h1>
+        <h3>Acá podes buscar si tenemos tu notebook registrada.</h3>
+
+        <form action="/AppInvIT/buscar/" method="GET">
+            <input type="text" name="marca" id="marca">
+            <input type="submit" value="BUSCAR">
+        </form>
+    </div>
+{% endblock %}

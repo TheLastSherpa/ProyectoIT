@@ -1,0 +1,12 @@
+<!-- Template Storages-->
+{% extends "AppInvIT/base.html" %}
+{% load static %}
+
+{% block contenido %}
+    <!-- Contenido Dinamico-->
+    <div class="container-fluid">
+        <h1 class="mt-4">Storages</h1>
+        <h3>Estos son los Storage que tenemos.</h3>
+        <a class="btn btn-secondary" href="{% url 'StoragesFormulario' %}">Agregar Storage</a>
+    </div>
+{% endblock %}

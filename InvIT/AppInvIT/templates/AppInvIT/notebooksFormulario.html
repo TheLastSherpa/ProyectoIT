@@ -1,0 +1,17 @@
+<!-- Template Notebooks-->
+{% extends "AppInvIT/base.html" %}
+{% load static %}
+
+{% block contenido %}
+    <!-- Contenido Dinamico-->
+    <div class="container-fluid">
+        <h1 class="mt-4">Agregar una Notebook</h1>
+        <p>Ingrese la información de la Notebook</p>
+
+        <form action="/AppInvIT/notebooksFormulario" method="POST">{% csrf_token %}
+            <table>{{ miFormulario.as_table }}</table><br>
+            <input type="submit" value="AGREGAR">
+        </form>
+        <br><a class="btn btn-secondary" href="{% url 'Notebooks' %}">REGRESAR</a>
+    </div>
+{% endblock %}

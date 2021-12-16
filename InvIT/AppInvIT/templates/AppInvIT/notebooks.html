@@ -1,0 +1,12 @@
+<!-- Template Notebooks-->
+{% extends "AppInvIT/base.html" %}
+{% load static %}
+
+{% block contenido %}
+    <!-- Contenido Dinamico-->
+    <div class="container-fluid">
+        <h1 class="mt-4">Notebooks</h1>
+        <h3>Estas son las notebooks que tenemos.</h3>
+        <a class="btn btn-secondary" href="{% url 'NotebooksFormulario' %}">Agregar Notebook</a>
+    </div>
+{% endblock %}

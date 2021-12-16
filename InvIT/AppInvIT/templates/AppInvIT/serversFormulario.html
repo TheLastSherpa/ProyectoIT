@@ -1,0 +1,17 @@
+<!-- Template Servers-->
+{% extends "AppInvIT/base.html" %}
+{% load static %}
+
+{% block contenido %}
+    <!-- Contenido Dinamico-->
+    <div class="container-fluid">
+        <h1 class="mt-4">Agregar un Server</h1>
+        <p>Ingrese la información del Server</p>
+        <form action="/AppInvIT/serversFormulario" method="POST">{% csrf_token %}
+            <table>{{ miFormulario.as_table }} </table><br>
+            <input type="submit" value="AGREGAR">
+        </form>
+        <br><a class="btn btn-secondary" href="{% url 'Servers' %}">REGRESAR</a>
+    </div>
+{% endblock %}
+

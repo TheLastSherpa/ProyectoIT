@@ -1,0 +1,12 @@
+<!-- Template Desktops-->
+{% extends "AppInvIT/base.html" %}
+{% load static %}
+
+{% block contenido %}
+    <!-- Contenido Dinamico-->
+    <div class="container-fluid">
+        <h1 class="mt-4">Desktops</h1>
+        <h3>Estas son las desktops que tenemos.</h3>
+        <a class="btn btn-secondary" href="{% url 'DesktopsFormulario' %}">Agregar Desktop</a>
+    </div>
+{% endblock %}

@@ -1,0 +1,16 @@
+<!-- Template Storages-->
+{% extends "AppInvIT/base.html" %}
+{% load static %}
+
+{% block contenido %}
+    <!-- Contenido Dinamico-->
+    <div class="container-fluid">
+        <h1 class="mt-4">Agregar un Storage</h1>
+        <p>Ingrese la información del Storage</p>
+        <form action="/AppInvIT/storagesFormulario" method="POST">{% csrf_token %}
+            <table>{{ miFormulario.as_table }}</table>
+            <input type="submit" value="AGREGAR">
+        </form>
+        <br><a class="btn btn-secondary" href="{% url 'Storages' %}">REGRESAR</a>
+    </div>
+{% endblock %}
