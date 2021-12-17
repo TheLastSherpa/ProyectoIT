@@ -1,14 +1,14 @@
-<!-- Template Busqueda Notebook-->
+<!-- Template Busqueda Storage-->
 {% extends "AppInvIT/base.html" %}
 {% load static %}
 
 {% block contenido %}
     <!-- Contenido Dinamico-->
     <div class="container-fluid">
-        <h1 class="mt-4">Buscar Notebook</h1>
-        <h3>Acá podes buscar si tenemos tu notebook registrada.</h3>
+        <h1 class="mt-4">Buscar Storage</h1>
+        <h3>Busca si tenemos tu storage registrado.</h3>
         <br>
-        <form action="/AppInvIT/buscarNotebook/" method="GET">
+        <form action="/AppInvIT/buscarStorage/" method="GET">
             Buscar por Marca
             <input type="text" name="marca" id="marca">
             <input type="submit" value="BUSCAR">

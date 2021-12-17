@@ -98,6 +98,54 @@ def storageFormulario(request):
 def busquedaNotebook(request):
     return render(request, 'AppInvIT/busquedaNotebook.html')
 
-def buscar(request):
-    respuesta = f"Estoy buscando las notebooks de esta marca: {request.GET['marca']}"
+def buscarNotebook(request):
+    if request.GET["marca"]:
+        marca = request.GET["marca"]
+        notebooks = Notebook.objects.filter(marca__icontains=marca)
+        
+        return render(request, "AppInvIT/resultadoBusquedaNotebook.html",{"notebooks":notebooks, "marca":marca})
+    else:
+        respuesta = "Che, mandame información!"
+    return HttpResponse(respuesta)
+
+# Busqueda Desktop
+def busquedaDesktop(request):
+    return render(request, 'AppInvIT/busquedaDesktop.html')
+
+def buscarDesktop(request):
+    if request.GET["marca"]:
+        marca = request.GET["marca"]
+        desktops = Desktop.objects.filter(marca__icontains=marca)
+        
+        return render(request, "AppInvIT/resultadoBusquedaDesktop.html",{"desktops":desktops, "marca":marca})
+    else:
+        respuesta = "Che, mandame información!"
+    return HttpResponse(respuesta)
+
+# Busqueda Server
+def busquedaServer(request):
+    return render(request, 'AppInvIT/busquedaServer.html')
+
+def buscarServer(request):
+    if request.GET["marca"]:
+        marca = request.GET["marca"]
+        servers = Server.objects.filter(marca__icontains=marca)
+        
+        return render(request, "AppInvIT/resultadoBusquedaServer.html",{"servers":servers, "marca":marca})
+    else:
+        respuesta = "Che, mandame información!"
+    return HttpResponse(respuesta)
+
+# Busqueda Storage
+def busquedaStorage(request):
+    return render(request, 'AppInvIT/busquedaStorage.html')
+
+def buscarStorage(request):
+    if request.GET["marca"]:
+        marca = request.GET["marca"]
+        storages = Storage.objects.filter(marca__icontains=marca)
+        
+        return render(request, "AppInvIT/resultadoBusquedaStorage.html",{"storages":storages, "marca":marca})
+    else:
+        respuesta = "Che, mandame información!"
     return HttpResponse(respuesta)

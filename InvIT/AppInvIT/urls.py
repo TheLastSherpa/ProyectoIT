@@ -11,8 +11,15 @@ urlpatterns = [
     path('serversFormulario', views.serverFormulario, name="ServersFormulario"),
     path('storages', views.storages, name="Storages"),
     path('storagesFormulario', views.storageFormulario, name="StoragesFormulario"),
+    # Busquedas
     path('busquedaNotebook', views.busquedaNotebook, name="BusquedaNotebook"),
-    path('buscar/', views.buscar)
+    path('busquedaDesktop', views.busquedaDesktop, name="BusquedaDesktop"),
+    path('busquedaServer', views.busquedaServer, name="BusquedaServer"),
+    path('busquedaStorage', views.busquedaStorage, name="BusquedaStorage"),
+    path('buscarStorage/', views.buscarStorage),
+    path('buscarServer/', views.buscarServer),
+    path('buscarNotebook/', views.buscarNotebook),
+    path('buscarDesktop/', views.buscarDesktop),
 
 ]
 

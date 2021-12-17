@@ -1,0 +1,25 @@
+<!-- Template Resultado Busqueda Server-->
+{% extends "AppInvIT/base.html" %}
+{% load static %}
+
+{% block contenido %}
+    <!-- Contenido Dinamico-->
+    <div class="container-fluid">
+        <h1 class="mt-4">Buscar un Server</h1>
+        <p>Esto es lo que encontre:</p>
+        <br>
+        <center>
+        {% if servers %}
+            <ul>
+            {% for server in servers%}
+            <table>
+            <li>MARCA: {{server.marca}} --> MODELO: {{server.modelo}} --> NUMERO DE SERIE: {{server.numeroSerie}} --> ES RACKEABLE: {{server.esRackeable}}</li>
+            </table>
+            {% endfor%}
+            </ul>
+        {% endif %}
+        <br><a class="btn btn-secondary" href="{% url 'Servers' %}">REGRESAR</a>
+        <a class="btn btn-secondary" href="{% url 'BusquedaServer' %}">BUSCAR OTRO</a>
+        </center>
+    </div>
+{% endblock %}

@@ -1,0 +1,25 @@
+<!-- Template Resultado Busqueda Desktop-->
+{% extends "AppInvIT/base.html" %}
+{% load static %}
+
+{% block contenido %}
+    <!-- Contenido Dinamico-->
+    <div class="container-fluid">
+        <h1 class="mt-4">Buscar una Desktop</h1>
+        <p>Esto es lo que encontre:</p>
+        <br>
+        <center>
+        {% if desktops %}
+            <ul>
+            {% for desktop in desktops%}
+            <table>
+            <li>MARCA: {{desktop.marca}} ---> MODELO: {{desktop.modelo}} ---> NUMERO DE SERIE: {{desktop.numeroSerie}}</li>
+            </table>
+            {% endfor%}
+            </ul>
+        {% endif %}
+        <br><a class="btn btn-secondary" href="{% url 'Desktops' %}">REGRESAR</a>
+        <a class="btn btn-secondary" href="{% url 'BusquedaDesktop' %}">BUSCAR OTRA</a>
+        </center>
+    </div>
+{% endblock %}

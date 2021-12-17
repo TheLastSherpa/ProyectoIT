@@ -1,0 +1,25 @@
+<!-- Template Resultado Busqueda Notebook-->
+{% extends "AppInvIT/base.html" %}
+{% load static %}
+
+{% block contenido %}
+    <!-- Contenido Dinamico-->
+    <div class="container-fluid">
+        <h1 class="mt-4">Buscar una Notebook</h1>
+        <p>Esto es lo que encontre:</p>
+        <br>
+        <center>
+        {% if notebooks %}
+            <ul>
+            {% for notebook in notebooks%}
+            <table>
+            <li>MARCA: {{notebook.marca}} ---> MODELO: {{notebook.modelo}} ---> NUMERO DE SERIE: {{notebook.numeroSerie}}</li>
+            </table>
+            {% endfor%}
+            </ul>
+        {% endif %}
+        <br><a class="btn btn-secondary" href="{% url 'Notebooks' %}">REGRESAR</a>
+        <a class="btn btn-secondary" href="{% url 'BusquedaDesktop' %}">BUSCAR OTRA</a>
+        </center>
+    </div>
+{% endblock %}

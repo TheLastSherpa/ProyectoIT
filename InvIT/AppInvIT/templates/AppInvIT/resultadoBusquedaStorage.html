@@ -1,0 +1,25 @@
+<!-- Template Resultado Busqueda Storage-->
+{% extends "AppInvIT/base.html" %}
+{% load static %}
+
+{% block contenido %}
+    <!-- Contenido Dinamico-->
+    <div class="container-fluid">
+        <h1 class="mt-4">Buscar un Server</h1>
+        <p>Esto es lo que encontre:</p>
+        <br>
+        <center>
+        {% if storages %}
+            <ul>
+            {% for storage in storages%}
+            <table>
+            <li>MARCA: {{storage.marca}} --> MODELO: {{storage.modelo}} --> NUMERO DE SERIE: {{storage.numeroSerie}} --> ALMACENAMIENTO: {{storage.almacenamiento}} --> RACKEABLE: {{storage.esRackeable}}</li>
+            </table>
+            {% endfor%}
+            </ul>
+        {% endif %}
+        <br><a class="btn btn-secondary" href="{% url 'Storages' %}">REGRESAR</a>
+        <a class="btn btn-secondary" href="{% url 'BusquedaStorage' %}">BUSCAR OTRO</a>
+        </center>
+    </div>
+{% endblock %}

@@ -6,7 +6,7 @@ class Notebook(models.Model):
     numeroSerie = models.CharField(max_length = 30)
 
     def __str__(self):
-        return f"MARCA: {self.marca} ---> MODELO: {self.modelo} ---> AÑO DE FABRICACION: {self.numeroSerie}"
+        return f"MARCA: {self.marca} ---> MODELO: {self.modelo} ---> NUMERO DE SERIE: {self.numeroSerie}"
 
 class Desktop(models.Model):
     marca = models.CharField(max_length = 30)
@@ -14,7 +14,7 @@ class Desktop(models.Model):
     numeroSerie = models.CharField(max_length = 30)
 
     def __str__(self):
-        return f"MARCA: {self.marca} ---> MODELO: {self.modelo} ---> AÑO DE FABRICACION: {self.numeroSerie}"
+        return f"MARCA: {self.marca} ---> MODELO: {self.modelo} ---> NUMERO DE SERIE: {self.numeroSerie}"
 
 class Server(models.Model):
     marca = models.CharField(max_length = 30)
@@ -23,7 +23,7 @@ class Server(models.Model):
     esRackeable = models.BooleanField()
 
     def __str__(self):
-        return f"MARCA: {self.marca} ---> MODELO: {self.modelo} ---> AÑO DE FABRICACION: {self.numeroSerie} ---> ES RACKEABLE: {self.esRackeable}"
+        return f"MARCA: {self.marca} ---> MODELO: {self.modelo} ---> NUMERO DE SERIE: {self.numeroSerie} ---> ES RACKEABLE: {self.esRackeable}"
 
 class Storage(models.Model):
     marca = models.CharField(max_length = 30)
@@ -33,4 +33,4 @@ class Storage(models.Model):
     esRackeable = models.BooleanField()
 
     def __str__(self):
-        return f"MARCA: {self.marca} ---> MODELO: {self.modelo} ---> AÑO DE FABRICACION: {self.numeroSerie} ---> ALMACENAMIENTO: {self.almacenamiento}TB ---> ES RACKEABLE: {self.esRackeable}"
+        return f"MARCA: {self.marca} ---> MODELO: {self.modelo} ---> NUMERO DE SERIE: {self.numeroSerie} ---> ALMACENAMIENTO: {self.almacenamiento}TB ---> ES RACKEABLE: {self.esRackeable}"
